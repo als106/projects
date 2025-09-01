@@ -1,0 +1,102 @@
+<ion-content [fullscreen]="true">
+  <div class="login-container">
+    <img src="./assets/images/logo.png" class="logo" alt="Logo">
+    <ion-segment [(ngModel)]="authType" value="signIn">
+      <ion-segment-button value="signIn">
+        <ion-label>Sign in</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="signUp">
+        <ion-label>Sign up</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+    <form [formGroup]="formLogin" *ngIf="authType === 'signIn'" class="list-form">
+      <ion-item no-padding class="input-item">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email" class="custom-input"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="formLogin.get('email').touched && formLogin.get('email').hasError('required')">
+        <ion-text color="warning">Debes escribir tu e-mail</ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="formLogin.get('email').touched && formLogin.get('email').hasError('email')">
+        <ion-text color="warning">Debes escribir una dirección de correo electrónico correcta</ion-text>
+      </p>
+      <ion-item no-padding class="input-item">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" class="custom-input"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="formLogin.get('password').touched && formLogin.get('password').hasError('required')">
+        <ion-text color="warning">Debes escribir tu contraseña</ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="formLogin.get('password').touched && formLogin.get('password').hasError('minlength')">
+        <ion-text color="warning">La contraseña debe tener al menos 6 caracteres</ion-text>
+      </p>
+      <ion-item lines="none" class="remember-me">
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>Remember me</ion-label>
+      </ion-item>
+      <ion-button expand="block" (click)="doLogin()" [disabled]="!formLogin.valid">Sign in</ion-button>
+      <ion-item lines="none">
+        <ion-label class="forgot-password">Forgot password?</ion-label>
+      </ion-item>
+    </form>
+
+    <form [formGroup]="formRegister" *ngIf="authType === 'signUp'" class="list-form">
+      <ion-item no-padding class="input-item">
+        <ion-label position="floating">Name</ion-label>
+        <ion-input type="name" formControlName="name" class="custom-input"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="formRegister.get('name').touched && formRegister.get('name').hasError('required')">
+        <ion-text color="warning">Debes escribir tu nombre</ion-text>
+      </p>
+      <ion-item no-padding class="input-item">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="email" class="custom-input"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="formRegister.get('email').touched && formRegister.get('email').hasError('required')">
+        <ion-text color="warning">Debes escribir tu e-mail</ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="formRegister.get('email').touched && formRegister.get('email').hasError('email')">
+        <ion-text color="warning">Debes escribir una dirección de correo electrónico correcta</ion-text>
+      </p>
+      <ion-item no-padding class="input-item">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" class="custom-input"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="formRegister.get('password').touched && formRegister.get('password').hasError('required')">
+        <ion-text color="warning">Debes escribir tu contraseña</ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="formRegister.get('password').touched && formRegister.get('password').hasError('minlength')">
+        <ion-text color="warning">La contraseña debe tener al menos 6 caracteres</ion-text>
+      </p>
+      <ion-item lines="none" class="remember-me">
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>I agree with the & T&C Privacy Policy</ion-label>
+      </ion-item>
+      <ion-button expand="block" (click)="doRegister()" [disabled]="!formRegister.valid">Sign up</ion-button>
+    </form>
+
+    <div class="social-login">
+      <p>OR</p>
+      <div class="social-buttons">
+        <ion-button fill="clear">
+          <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear">
+          <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear">
+          <ion-icon slot="icon-only" name="logo-apple"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </div>
+
+  <ion-alert
+    [isOpen]="error!=''"
+    header="Warning!"
+    [message]="error"
+    [buttons]="['OK']"
+    (didDismiss)="error=''"
+  ></ion-alert>
+</ion-content>

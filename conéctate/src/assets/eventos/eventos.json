@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Taller de fotografía",
+        "startDate": "2024-07-10",
+        "host": "Escuela de Fotografía de Barcelona",
+        "description": "Mejora tus habilidades capturando momentos únicos. Aprende nuevas técnicas y trucos de fotografía con expertos en el campo. Descubre cómo componer imágenes impactantes y contar historias a través de la fotografía.",
+        "location": "Carrer de Balmes, 456",
+        "photo": "evento2.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Charla sobre sostenibilidad",
+        "description": "Aprende sobre prácticas ecoamigables para cuidar el planeta. Descubre cómo reducir tu huella de carbono, reciclar de manera efectiva y utilizar energías renovables en tu vida diaria. Únete a nosotros para aprender cómo hacer del mundo un lugar más sostenible.",
+        "startDate": "2024-06-25",
+        "host": "Asociación Verde",
+        "location": "Centro Cívico de Gràcia",
+        "photo": "evento3.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Concierto en el parque",
+        "description": "Disfruta de una tarde de música al aire libre. Escucha a bandas locales y descubre nuevos talentos en este evento musical imperdible.",
+        "startDate": "2024-06-15",
+        "host": "Ayuntamiento de Barcelona",
+        "location": "Parque de la Ciutadella",
+        "photo": "evento1.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Exposición de arte contemporáneo",
+        "description": "Explora las últimas creaciones de artistas locales. Sumérgete en el mundo del arte contemporáneo y descubre nuevas perspectivas y expresiones artísticas.",
+        "startDate": "2024-06-20",
+        "host": "Galería de Arte Moderno",
+        "location": "Carrer dels Angels, 123",
+        "photo": "evento4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Feria gastronómica",
+        "description": "Degusta platos deliciosos de diferentes culturas. Explora una amplia variedad de sabores y disfruta de la gastronomía internacional en esta feria gastronómica única en su tipo.",
+        "startDate": "2024-07-02",
+        "host": "Mercado de la Boqueria",
+        "location": "La Rambla, 91",
+        "photo": "evento5.jpg"
+    }
+]

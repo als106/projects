@@ -1,0 +1,72 @@
+.profile-container {
+    text-align: center;
+    padding: 20px;
+    padding-top: 58px;
+  }
+  
+  .profile-avatar {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .profile-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .profile-description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+    padding: 0 20px;
+  }
+  
+  ion-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .interests-section {
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .interests-scroll {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+  
+  .interest-item {
+    flex: 0 0 auto;
+    width: 120px;
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  .interest-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .about-image {
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+    margin-top: 10px;
+    object-fit: cover;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  

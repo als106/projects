@@ -1,0 +1,18 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Crea un evento</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-content [fullscreen]="true">
+  <div class="centered-div">
+    <ion-label size="large">¿En que fecha?</ion-label>
+    <ion-datetime presentation="date" min="2024-05-25" max="2027-05-25"></ion-datetime>
+
+    <ion-label size="large">Titulo del evento</ion-label>
+    <ion-input label="" label-placement="floating" fill="solid" placeholder="Título del evento" style="width: 100%;"></ion-input>
+    <p></p>
+    <ion-label size="large">Descripcion del evento</ion-label>
+    <ion-textarea label="" labelPlacement="floating" fill="solid" placeholder="Descripción del evento"></ion-textarea>
+    <ion-button shape="round" color="primary" [href]="'tabs/lista-eventos'">Añadir</ion-button>
+  </div>
+</ion-content>

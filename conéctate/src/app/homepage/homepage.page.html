@@ -1,0 +1,121 @@
+<ion-content>
+  <ion-grid>
+    <!-- Header with categories -->
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" [style.padding-top]="'58px'">
+          <div class="tab-container">
+            <button class="tab-button" [ngClass]="{ 'active': selectedTab === 'all' }"
+              (click)="selectTab('all')">All</button>
+            <button class="tab-button" [ngClass]="{ 'active': selectedTab === 'tendencias' }"
+              (click)="selectTab('tendencias')">Tendencias</button>
+            <button class="tab-button" [ngClass]="{ 'active': selectedTab === 'para-ti' }"
+              (click)="selectTab('para-ti')">Para ti</button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!-- Featured Event Section -->
+    <ion-row *ngIf="selectedTab === 'all'">
+      <ion-col>
+        <h2 class="header-title">
+          Top eventos
+          <a href='tabs/home/all-events' class="see-all">See all</a>
+        </h2>
+      </ion-col>
+    </ion-row>
+    <ion-card *ngIf="selectedTab === 'all'">
+      <ng-container *ngFor="let evento of eventos; let i = index">
+        <ng-container *ngIf=" i < 2">
+          <ion-card [href]="generateURL(evento.id)">
+            <div class="image-container">
+              <img src="./assets/images/eventos/{{ evento.photo }}" alt="Evento" />
+            </div>
+            <ion-card-header>
+              <ion-card-subtitle>{{ evento.name }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="8">
+                  <p>{{ evento.host }} • 2.5M views • {{ evento.startDate | date }}</p>
+                </ion-col>
+                <ion-col size="4" class="text-right price">
+                  FREE
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ng-container>
+      </ng-container>
+    </ion-card>
+
+    <!-- Tendencias Section -->
+    <ion-row *ngIf="selectedTab === 'all' || selectedTab === 'tendencias'">
+      <ion-col>
+        <h2 class="header-title">
+          Tendencias
+          <a href="tabs/home/all-events" class="see-all">See all</a>
+        </h2>
+      </ion-col>
+    </ion-row>
+    <ion-card *ngIf="selectedTab === 'all' || selectedTab === 'tendencias'">
+      <ng-container *ngFor="let evento of eventos; let i = index">
+        <ng-container *ngIf=" i > 1 && i < 4">
+          <ion-card [href]="generateURL(evento.id)">
+            <div class="image-container">
+              <img src="./assets/images/eventos/{{ evento.photo }}" alt="Evento" />
+            </div>
+            <ion-card-header>
+              <ion-card-subtitle>{{ evento.name }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="8">
+                  <p>{{ evento.host }} • 2.5M views • {{ evento.startDate | date }}</p>
+                </ion-col>
+                <ion-col size="4" class="text-right price">
+                  FREE
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ng-container>
+      </ng-container>
+    </ion-card>
+
+    <!-- Recomendados Section -->
+    <ion-row *ngIf="selectedTab === 'all' || selectedTab === 'para-ti'">
+      <ion-col>
+        <h2 class="header-title">
+          Recomendados
+          <a href="tabs/home/all-events" class="see-all">See all</a>
+        </h2>
+      </ion-col>
+    </ion-row>
+    <ion-card *ngIf="selectedTab === 'all' || selectedTab === 'para-ti'">
+      <ng-container *ngFor="let evento of eventos; let i = index">
+        <ng-container *ngIf=" i > 2 && i < 5">
+          <ion-card [href]="generateURL(evento.id)">
+            <div class="image-container">
+              <img src="./assets/images/eventos/{{ evento.photo }}" alt="Evento" />
+            </div>
+            <ion-card-header>
+              <ion-card-subtitle>{{ evento.name }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col size="8">
+                  <p>{{ evento.host }} • 2.5M views • {{ evento.startDate | date }}</p>
+                </ion-col>
+                <ion-col size="4" class="text-right price">
+                  FREE
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+        </ng-container>
+      </ng-container>
+    </ion-card>
+  </ion-grid>
+</ion-content>

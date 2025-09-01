@@ -1,0 +1,61 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>listas-fav</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <div class="centered-div">
+    <ion-grid>
+      <h2>Mis listas favoritas</h2>
+      <ion-row>
+        <ion-col>
+          <ion-card [href]="'tabs/lista-eventos'">
+            <ion-card-header>
+              <ion-card-title>Café especialidad</ion-card-title>
+            </ion-card-header>
+            <img class="imagen-fija" alt="Evento" [src]="'../../assets/images/favoritas/fav1.jpg'" />
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card [href]="'tabs/lista-eventos'">
+            <ion-card-header>
+              <ion-card-title>Club de lectura</ion-card-title>
+            </ion-card-header>
+            <img class="imagen-fija" alt="Evento" [src]="'../../assets/images/favoritas/fav2.jpg'" />
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card [href]="'tabs/lista-eventos'">
+            <ion-card-header>
+              <ion-card-title>Artesanías</ion-card-title>
+            </ion-card-header>
+            <img class="imagen-fija" alt="Evento" [src]="'../../assets/images/favoritas/fav3.jpg'" />
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card [href]="'tabs/lista-eventos'">
+            <ion-card-header>
+              <ion-card-title>Eventos sociales</ion-card-title>
+            </ion-card-header>
+            <img class="imagen-fija" alt="Evento" [src]="'../../assets/images/favoritas/fav4.jpg'" />
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
+<style>
+  .centered-div {
+      margin: 5% 20% 5% 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+  }
+  .imagen-fija {
+  width: 200px;
+  height: 200px;
+}
+</style>

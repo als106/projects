@@ -1,0 +1,35 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Detalle evento</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-content [fullscreen]="true">
+  <div class="centered-div">
+    <ion-card>    
+      <img alt="Evento" [src]="'../../assets/images/eventos/'+evento.photo" />
+      <ion-card-header>
+        <ion-label class="hide-label">{{evento.id}}</ion-label>
+        <ion-card-title>{{evento.name}}</ion-card-title>
+        <ion-card-subtitle>{{evento.host}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button class="margin-bottom:20px;" fill="outline" [href]="'tabs/lista-eventos'">Asistir</ion-button>
+        <p></p>
+        {{evento.description}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+<style>
+.centered-div {
+    margin: 5% 40% 5% 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.hide-label {
+  display: none;
+}
+
+</style>

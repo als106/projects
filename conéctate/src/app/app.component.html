@@ -1,0 +1,61 @@
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar *ngIf="showNavBar">
+      <ion-title>
+        <img src="assets/images/logo.png" alt="Logo" class="logo">
+        Conectate
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button [href]="'buscar-evento'">
+          <ion-icon name="search-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="toggleMenu()">
+          <ion-avatar>
+            <img src="assets/images/perfil/fotoPerfil.jpg" alt="profile picture">
+          </ion-avatar>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" class="ion-padding-top">
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
+
+  <div *ngIf="showMenu" class="menu-overlay" (click)="toggleMenu()"></div>
+  <div *ngIf="showMenu" class="profile-menu">
+    <ion-card>
+      <ion-card-header>
+        <ion-item lines="none">
+          <ion-avatar slot="start">
+            <img src="assets/images/perfil/fotoPerfil.jpg" alt="profile picture">
+          </ion-avatar>
+          <ion-label>
+            <h2>Elise Cowen</h2>
+            <p>example&#64;gmail.com</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item button (click)="goToProfile()">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            <ion-label>Edit profile</ion-label>
+          </ion-item>
+          <ion-item button>
+            <ion-icon name="settings-outline" slot="start"></ion-icon>
+            <ion-label>Preferences</ion-label>
+          </ion-item>
+          <ion-item button>
+            <ion-icon name="help-circle-outline" slot="start"></ion-icon>
+            <ion-label>Help center</ion-label>
+          </ion-item>
+          <ion-item button>
+            <ion-icon name="log-out-outline" slot="start"></ion-icon>
+            <ion-label>Sign out</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-app>
